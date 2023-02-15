@@ -4,8 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //import './App.css';
 
 import HomePage from './pages/HomePage';
-import SignupPage from './pages/SignupPage';
-import SigninPage from './pages/SigninPage';
+import NotesPage from './pages/NotesPage';
 
 
 export default function App(){
@@ -13,8 +12,7 @@ export default function App(){
     <BrowserRouter>
     <Routes>
       <Route path='/' element = {<HomePage/>}></Route>
-      <Route path='/signup' element = {<SignupPage/>}></Route>
-      <Route path='/signin' element = {<SigninPage/>}></Route>
+      <Route path='/notes' element = {<NotesPage/>}></Route>
     </Routes>
     </BrowserRouter>
   )

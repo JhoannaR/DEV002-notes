@@ -5,8 +5,7 @@ export default function HomePage(){
     return (
     <div>
         <h2>RemindMe</h2>
-    <Link to="/signup">Sign Up</Link>
-    <Link to="/signin">Sign In</Link>
+    <Link to="/notes">Notes</Link>
 
 
 
