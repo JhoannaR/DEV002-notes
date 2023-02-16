@@ -7,23 +7,15 @@ import { loginWithGoogle } from '../lib/firabase/methodsAuth';
 const login = async (e) => {
   e.preventDefault();
 
-  alert("Para más información, acuda a recepción.");
   try {
     await loginWithGoogle(auth);
-    // if (emailVerified) {
-    //  // onNavigate('/feed');
-    //   //console.log('Bienvenid@', email);
-    // } else {
-    //   /*  auth.signOut();*/
-    //   //console.log('Por favor realiza la verificación de tu cuenta');
-    // }
+    
     location.href='/notes'
   }
   catch (error) {
-    console.log(error);
+   // console.log(error);
   }
 };
-
 
 //import background from "./img/dienteDeLeon.png";
 
