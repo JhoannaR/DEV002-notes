@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-name{
+  color: blue;
+}
+
+.btn-google {
+  background: rgb(41, 248, 72);
+}
+
+.btn-google:hover {
+  background: rgb(41, 41, 248);
+}

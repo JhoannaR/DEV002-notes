@@ -1,0 +1,2 @@
+    <div style={{ backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPPFR_AIFSfzZKmB_48rcyyaRzBeiJefjMD2lrNWkLrL63YVEzfwh0svCJYXd9pq2oT8&usqp=CAU")` }}>
+    </div>
