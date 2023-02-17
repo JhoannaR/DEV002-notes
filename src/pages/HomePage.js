@@ -17,7 +17,6 @@ const login = async (e) => {
   }
 };
 
-//import background from "./img/dienteDeLeon.png";
 
 export default function HomePage() {
   return (
@@ -25,8 +24,7 @@ export default function HomePage() {
       <h2>RemindMe</h2>
       <button className='btn-google' onClick={login}> Google</button>
       {/* <Link to="/notes">Ir a mis notas</Link> */}
-
-    </div>
+        </div>
 
   )
 }
