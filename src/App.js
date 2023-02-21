@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // Puedo renombfrar BrowserRouter as Router. Route permite definir una ruta(al cambiar la url). Routes es el padre de Route
 //import './App.css';
-import './style.css'
+//import './style.css'
 import HomePage from './pages/HomePage';
 import NotesPage from './pages/NotesPage';
 
