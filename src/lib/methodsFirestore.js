@@ -1,8 +1,9 @@
 import { app,
-  getFirestore, collection, Timestamp, addDoc,} from "../init.js";
-// query, orderBy, onSnapshot, deleteDoc, doc, getDoc, updateDoc, arrayUnion, arrayRemove 
+  getFirestore, collection, Timestamp, addDoc,query, orderBy, onSnapshot} from "../init.js";
+// , deleteDoc, doc, getDoc, updateDoc, arrayUnion, arrayRemove 
   const db = getFirestore(app);
 
+//--------------------Generando nueva nota de forma dinámica----------------
 
   // export const saveNote = async (title, descripcion) => await addDoc(collection(db, 'notesCollection'), {
   //    title, descripcion, date: Timestamp.fromDate(new Date()) }); /*se guarda la info con la hora de firebase */
@@ -28,3 +29,10 @@ import { app,
   //     console.error("Error adding document: ", e);
   //   }
   // }
+
+  //---------------Obtener notas existentes de forma dinámica(sin recargar)----------------
+
+  export const getNotes = (callback) => {
+    const qs = query(collection(db, 'notesCollection'), orderBy('date', 'desc'));
+    onSnapshot(qs, (callback))
+  }
