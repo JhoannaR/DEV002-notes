@@ -56,3 +56,6 @@ import { app,
 
   //---------------Eliminar nota existente------------------------------------------------
   export const deleteNote = async (id) => await deleteDoc(doc(db, 'notesCollection', id));
+
+  //---------------Eliminar nota existente------------------------------------------------
+//export const updateNote = async (id, newFile) => await updateDoc(doc(db, 'notesCollection', id), newFile)

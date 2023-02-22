@@ -62,14 +62,15 @@ export default function NotesPage() {
             setLista(docs)
         })
     }
+    //la variable de estado actualizar que me dijeron las chicas se usa cuando quiero presentar una ayuda visual de loading para el usuario antes de renderizar las notitas
     //const [actualizar, setActualizar] = useState(false)
     //callbac, cuando pasará
     useEffect(() => { //Solo quiero hacerlo 1 vez.establecer cosas que quiero que pase en los distintos estados(monta(aparece en el DOM(1vez)),
         // actualiza(con la actualización de estados(puede hacerse muchas veces)) y desmonta(se quita del DOM(1vez)) )
         // setActualizar(false)
         const unsubscribe = getLista()
-        // react:^esta función se ejecuta cuando el componente se desmonta, al desmontar un componente react ejecuta todas las funciones que retornen los useEffect del componente
-        // frebase: cerrando la comunicacion en tiempo real con firestore (websocket)
+        // react:esta función se ejecuta cuando el componente se desmonta, al desmontar un componente react ejecuta todas las funciones que retornen los useEffect del componente
+        // firebase: cerrando la comunicacion en tiempo real con firestore (websocket)
         const handleUnmount = () => unsubscribe
         return handleUnmount
     }, []) //array de dependencia //el corchete(cuando quiero que pase) //react renderiza siempre
@@ -77,8 +78,26 @@ export default function NotesPage() {
     //-----------------------------------eliminar nota existente-------------------------------
 
 
+    const handleDelete = (id) => {
+        const eliminar = confirm('Do you want to delete this message?');
+        if (eliminar) {
+            deleteNote(id)
+            alert('el post ha sido eliminado');
+        }
+    }
 
-
+    //-----------------------------------editar nota existente-------------------------------
+    
+    // const handleUpdate = (id) => {
+    //     const editar = confirm('Do you want to edit this message?');
+    //             if (editar) {
+    //                 updateNote(id, {
+    //                     "title":titleEdited,
+    //                     "descripcion": textoEdited,
+    //                     "date": Timestamp.fromDate(new Date()),
+    //                 })
+    //             }
+    // }
 
 
 
@@ -95,7 +114,7 @@ export default function NotesPage() {
                 </Link>
             </div>
             <form className='form-note' name='formulario' onSubmit={(evento) => { handleSubmit(evento); evento.target.reset() }}>  {/*handle*/}
-                <input type='text' name='title' placeholder='Title...' value={title} onChange={handleTitleChange}></input>
+                <input type='text' name='title' className='title-style' placeholder='Title...' value={title} onChange={handleTitleChange}></input>
                 <textarea className='text-note' placeholder='Description...' rows="5" cols="50" name='description' value={description} onChange={handleDescriptionChange}></textarea>
                 <button type="submit" className='save-btn'>save</button>
 
@@ -105,15 +124,13 @@ export default function NotesPage() {
                     lista.map(list => (
                         <div key={list.id} className='note'>
                             <div>
-                                <button onClick={() => deleteNote(list.id)}>Delete</button>
+                                <button onClick={() => handleDelete(list.id)}>Delete</button>
                                 <button>Update</button>
 
                             </div>
                             <h3> {list.title}</h3>
                             <p> {list.description}</p>
                             <br></br>
-
-
 
                         </div>
                     ))
