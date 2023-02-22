@@ -1,6 +1,6 @@
 import { app,
-  getFirestore, collection, Timestamp, addDoc,query, orderBy, onSnapshot} from "../init.js";
-// , deleteDoc, doc, getDoc, updateDoc, arrayUnion, arrayRemove 
+  getFirestore, collection, Timestamp, addDoc,query, orderBy, onSnapshot, deleteDoc, doc} from "../init.js";
+// , getDoc, updateDoc, arrayUnion, arrayRemove, , querySnapshot 
   const db = getFirestore(app);
 
 //--------------------Generando nueva nota de forma dinámica----------------
@@ -34,5 +34,25 @@ import { app,
 
   export const getNotes = (callback) => {
     const qs = query(collection(db, 'notesCollection'), orderBy('date', 'desc'));
-    onSnapshot(qs, (callback))
+    return onSnapshot(qs, callback)
+    //querySnapshot(qs, (callback))
+
   }
+
+
+  // const [tasks, setTasks] = useState([])
+  //   useEffect(() => {
+  //       onSnapshot(collection(db, "notes"), (querySnapshot) => { //ordenarle en fecha tal vez sort(...data)
+  //           const data = [];
+  //           querySnapshot.forEach((doc) => {
+  //               data.push(doc.data());
+  //           })
+  //           setTasks(data);
+  //           console.log(tasks);
+  //       })
+
+  //   }, []
+  //   )
+
+  //---------------Eliminar nota existente------------------------------------------------
+  export const deleteNote = async (id) => await deleteDoc(doc(db, 'notesCollection', id));

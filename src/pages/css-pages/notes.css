@@ -29,17 +29,66 @@ body {
   
   
 .container-notes{
-    width: 97%;
+     width: 97%;
     height: 840px;
     background-color:rgb(219, 251, 254);
     border: none;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 10px 10px 10px;
+    /*flex-direction: column;
+    margin: 10px 10px 10px 10px; */
     /* gap: 20px; */
+    display: flex;
+    /*en vez de grid ya que no es responsive*/
+    /* order: 1; */
+    flex-direction: row;
+    /*se acomoda en filas */
+    /* flex-wrap: wrap; */
+    /*ajustará el número de elementos en las filas de acuerdo al tamaño del dispositivo*/
+    /* justify-content: space-between; */
+    /*justifique a los lados y ajusta el tamaño entre tarjetas*/
+    /* align-items: center; */
+    /*centra las tarjetas*/
+    align-content: center;
+    /*centra el contenido de las tarjetas*/
+    gap: 10px;
+    /*el gap separa los hijos (1 rem=16px)*/
+
+}
+
+.container-header{
+  display: flex;
+  justify-content: end;    
 
 }
 
 .logout-icon{
     color:red;
+
+}
+
+.form-note{
+  display: flex;
+  flex-flow: column wrap;
+  width: 15%;
+/* align-items: center; */
+margin-left: 1rem;
+}
+
+.save-btn{
+  background-color: aquamarine;
+  height: 30px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+}
+.note{
+  background-color: aquamarine;
+  height: 100px;
+  width: 10%;
+  border-radius: 10%;
+  margin: 10px 10px 10px 10px;
+}
+
+.text-note{
+  resize: none;
+  /* conservará su tamaño */
+
 }
