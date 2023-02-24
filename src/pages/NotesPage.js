@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 //import { GrLogout } from "react-icons/gr";
 import { FaSignOutAlt } from "react-icons/fa";
-
+import { FaEdit } from "react-icons/fa";
 import ".//css-pages/notes.css";
+import {MdDeleteOutline} from "react-icons/md";
+
 import { auth, Timestamp } from "../init";
 import { logOut } from "../lib/firabase/methodsAuth";
 import {
@@ -64,7 +66,7 @@ export default function NotesPage() {
         //  console.log(dateTime)
         docs.push({ ...notes, id: item.id });
       });
-      console.log(docs);
+      //console.log(docs);
       setLista(docs);
     });
   };
@@ -135,7 +137,7 @@ export default function NotesPage() {
   };
 
   return (
-    <div>
+    <div className="notes-page">
       <div className="container-header">
         RemindMe
         <h2>Notes</h2>
@@ -152,18 +154,17 @@ export default function NotesPage() {
           evento.target.reset();
         }}
       >
-        {" "}
         {/*handle*/}
         <input
           type="text"
           name="title"
-          className="title-style"
+          // className="title-style"
           placeholder="Title..."
           value={title}
           onChange={handleTitleChange}
         ></input>
         <textarea
-          className="text-note"
+          // className="text-note"
           placeholder="Description..."
           rows="5"
           cols="50"
@@ -178,28 +179,26 @@ export default function NotesPage() {
       <div className="container-notes">
         {lista.map((list) => (
           <div key={list.id} className="note">
-            <div>
-              <button onClick={() => handleDelete(list.id)}>Delete</button>
-              <button onClick={() => handleUpdate(list)}>Update</button>
+            <div className="container-btn-note-icons">
+              <MdDeleteOutline className="btn-note-icon" size={"1.5rem"} onClick={() => handleDelete(list.id)} />
+              <FaEdit className="btn-note-icon" size={"1.3rem"} onClick={() => handleUpdate(list)}/>
             </div>
-            <h3 name="titleNote" value={titleNote}>
-              {" "}
+            <h3 name="titleNote" className="title-note" value={titleNote}>
               {list.title}
             </h3>
-            <p name="descriptionNote" value={descriptionNote}>
-              {" "}
+            <p name="descriptionNote" className="description-note" value={descriptionNote}>
               {list.description}
             </p>
             <br></br>
           </div>
         ))}
         {editar ? (
-          <div className="modal-container" id="modalContainerEditing">
+          <div className="modal-container">
             <div className="modal-header">
               <input
                 type="text"
                 name="title"
-                className="title-style"
+                className="title-note-edit"
                 placeholder="Title..."
                 value={titleNote}
                 onChange={handleTitleNoteChange}
@@ -208,7 +207,7 @@ export default function NotesPage() {
             </div>
             <div className="modal-body">
               <textarea
-                className="text-note"
+                className="text-note-edit"
                 placeholder="Description..."
                 rows="5"
                 cols="50"

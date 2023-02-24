@@ -1,107 +1,120 @@
+/*estilos generales*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  } 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  .app-name{
-    color: blue;
-  }
-  
-  
-  
-  .fondo-home{
-    width: 847px; height: 100vh; /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2bbfe4+0,eaecc6+100 */ background: #2bbfe4; /* Old browsers */ background: -moz-linear-gradient(left, #2bbfe4 0%, #eaecc6 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #2bbfe4 0%,#eaecc6 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #2bbfe4 0%,#eaecc6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2bbfe4', endColorstr='#eaecc6',GradientType=1 ); /* IE6-9 */}
-  
-  
-.container-notes{
-     width: 97%;
-    height: 840px;
-    background-color:rgb(219, 251, 254);
-    border: none;
-    /*flex-direction: column;
-    margin: 10px 10px 10px 10px; */
-    /* gap: 20px; */
-    display: flex;
-    /*en vez de grid ya que no es responsive*/
-    /* order: 1; */
-    flex-direction: row;
-    /*se acomoda en filas */
-    /* flex-wrap: wrap; */
-    /*ajustará el número de elementos en las filas de acuerdo al tamaño del dispositivo*/
-    /* justify-content: space-between; */
-    /*justifique a los lados y ajusta el tamaño entre tarjetas*/
-    /* align-items: center; */
-    /*centra las tarjetas*/
-    align-content: center;
-    /*centra el contenido de las tarjetas*/
-    gap: 10px;
-    /*el gap separa los hijos (1 rem=16px)*/
-
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.container-header{
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-name {
+  color: blue;
+}
+
+/*-------------------------------------header----------------------*/
+.container-header {
   display: flex;
-  justify-content: end;    
-
+  justify-content: end;
+}
+.logout-icon {
+  color: red;
 }
 
-.logout-icon{
-    color:red;
-
-}
-
-.form-note{
+/*---------------------------formulario para crear una nota---------*/
+.form-note {
   display: flex;
   flex-flow: column wrap;
-  width: 15%;
-/* align-items: center; */
-margin-left: 1rem;
+  width: 100px;
+   justify-content: center; 
+  /* align-items: center; */
+  
 }
 
-.save-btn{
+.save-btn {
   background-color: aquamarine;
   height: 30px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: large;
 }
-.note{
+
+/* .text-note {
+  resize: none;
+   conservará su tamaño 
+} */
+
+/*-----------------------------contenedor de notas-------------------*/
+.container-notes {
+  width: auto;
+  height: 1024px;
+  background-color: rgb(219, 251, 254);
+  border: none;
+  /*flex-direction: column;
+ margin: 10px 10px 10px 10px; */
+  /* gap: 20px; */
+  display: flex;
+
+  order: 1;
+  flex-direction: row;
+  /*se acomoda en filas */
+  /* flex-wrap: wrap;  */
+  /*ajustará el número de elementos en las filas de acuerdo al tamaño del dispositivo*/
+  /* justify-content: space-between; */
+  /*justifique a los lados y ajusta el tamaño entre tarjetas*/
+  /* align-items: center; */
+  /*centra las tarjetas*/
+  align-content: center;
+  /*centra el contenido de las tarjetas*/
+  gap: 3px;
+  /*el gap separa los hijos (1 rem=16px)*/
+}
+
+
+
+/*-------------------------------------nota creada---------------------------*/
+.note {
   background-color: aquamarine;
-  height: 150px;
-  width: 150px;
+  height: fit-content;
+  width: 10%;
   border-radius: 10%;
   margin: 10px 10px 10px 10px;
+  position: relative;
+}
+.container-btn-note-icons {
+  display: flex;
+  justify-content: end;
 }
 
-.text-note{
-  resize: none;
-  /* conservará su tamaño */
-
-}
-.title-style{
-  height: 30px;
+.btn-note-icon {
+  background-color: none;
 }
 
+
+.title-note {
+  margin: 2px 10px 2px 10px;
+  font-size: 0.8rem;
+}
+
+.description-note {
+  margin: 2px 10px 2px 10px;
+  font-size: 0.7rem;
+}
 
 
 /*modal para editar*/
 .modal-container {
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
   width: 261.13px;
   height: 136px;
   left: 49px;
@@ -117,10 +130,10 @@ margin-left: 1rem;
   justify-content: center;
   border: 2px solid rgba(82, 82, 92, 0.5);
   border-bottom: none;
-
-
 }
-
+.title-note-edit {
+  height: 30px;
+}
 .acept-update {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -148,10 +161,25 @@ margin-left: 1rem;
   left: 65px;
   color: rgba(82, 82, 92, 1);
   cursor: pointer;
-
 }
-hr{
+hr {
   size: 2px;
-  width:250px;
-  color:aquamarine;
+  width: 250px;
+  color: aquamarine;
+}
+
+.text-note-edit {
+  width: 261.13px;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    margin: 2rem;
+    padding: 3rem;
+  }
+
+  .note {
+    width: 70px;
+    font-size: small;
+  }
 }

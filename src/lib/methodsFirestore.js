@@ -12,7 +12,7 @@ import { app,
   export const saveNote =(title, description)=>{
     const collectionRef =collection(db, 'notesCollection')
     const promise = addDoc(collectionRef, {  //el resultado de collection le va a pasr a addDoc. No es callback porque estamos pasando un valor, no una función
-      title, description, date: Timestamp.fromDate(new Date()), color:'red' });
+      title, description, date: Timestamp.fromDate(new Date()) });
       return promise;
   }
 
