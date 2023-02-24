@@ -1,6 +1,6 @@
 import { app,
-  getFirestore, collection, Timestamp, addDoc,query, orderBy, onSnapshot, deleteDoc, doc} from "../init.js";
-// , getDoc, updateDoc, arrayUnion, arrayRemove, , querySnapshot 
+  getFirestore, collection, Timestamp, addDoc,query, orderBy, onSnapshot, deleteDoc, doc, updateDoc} from "../init.js";
+// , getDoc, arrayUnion, arrayRemove, , querySnapshot 
   const db = getFirestore(app);
 
 //--------------------Generando nueva nota de forma dinámica----------------
@@ -12,7 +12,7 @@ import { app,
   export const saveNote =(title, description)=>{
     const collectionRef =collection(db, 'notesCollection')
     const promise = addDoc(collectionRef, {  //el resultado de collection le va a pasr a addDoc. No es callback porque estamos pasando un valor, no una función
-      title, description, date: Timestamp.fromDate(new Date()) });
+      title, description, date: Timestamp.fromDate(new Date()), color:'red' });
       return promise;
   }
 
@@ -58,4 +58,4 @@ import { app,
   export const deleteNote = async (id) => await deleteDoc(doc(db, 'notesCollection', id));
 
   //---------------Eliminar nota existente------------------------------------------------
-//export const updateNote = async (id, newFile) => await updateDoc(doc(db, 'notesCollection', id), newFile)
+export const updateNote = async (id, newFile) => await updateDoc(doc(db, 'notesCollection', id), newFile)
