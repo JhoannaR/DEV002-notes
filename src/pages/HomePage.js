@@ -5,7 +5,7 @@ import ".//css-pages/home.css"
 
 
 import { auth } from '../init';
-import { loginWithGoogle } from '../lib/firabase/methodsAuth';
+import { loginWithGoogle } from '../lib/firebase/methodsAuth';
 
 const login = async (e) => {
   e.preventDefault();

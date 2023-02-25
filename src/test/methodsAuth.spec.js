@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom';
-import { auth, signOut } from 'src/init.js';
-import { logOut } from '../src/lib/firebase/methodsAuth.js';
 
-jest.mock('src/init.js', () => {
+import { auth, signOut } from '../init.js';
+import { logOut, loginWithGoogle } from '../lib/firebase/methodsAuth.js';
+
+jest.mock('../init.js', () => {
     return {
         auth: jest.fn(() => {//la función fn crea una función interceptada por JEST
             return { auth: 'TEST' }
@@ -10,7 +11,12 @@ jest.mock('src/init.js', () => {
         signOut: jest.fn((auth) => {
             if (!auth)
                 return Promise.reject('no auth parameter')
-        })
+        }),
+        loginWithGoogle: jest.fn((email) => {
+            if (email === 'jhoannarosameradavila@gmail.com') {
+                return ('Correo verificado');
+            }
+        }),
     }
   })
   
@@ -39,5 +45,14 @@ jest.mock('src/init.js', () => {
     })
   })
   
-  
+  describe('Tests para iniciar sesión en Google', () => {
+    const email = 'jhoannarosameradavila@gmail.com';
+    it('debe retornar que es un correo válido', async () => {
+        try {
+            await loginWithGoogle(email);
+        } catch (error) {
+            expect(error.message).toBe('ERROR');
+        }
+    });
+});
   

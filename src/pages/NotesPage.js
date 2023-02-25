@@ -8,7 +8,7 @@ import ".//css-pages/notes.css";
 import {MdDeleteOutline} from "react-icons/md";
 
 import { auth, Timestamp } from "../init";
-import { logOut } from "../lib/firabase/methodsAuth";
+import { logOut } from "../lib/firebase/methodsAuth.js";
 import {
   deleteNote,
   getNotes,
