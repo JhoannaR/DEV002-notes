@@ -48,6 +48,7 @@ export default function NotesPage() {
     SetDescription(target.value);
   };
   //-----------------------------------renderizar notas existentes-------------------------------
+  
   //variables de estado
   const [lista, setLista] = useState([]);
 
@@ -149,6 +150,7 @@ export default function NotesPage() {
       <form
         className="form-note"
         name="formulario"
+        id="form"
         onSubmit={(evento) => {
           handleSubmit(evento);
           evento.target.reset();
@@ -176,7 +178,7 @@ export default function NotesPage() {
           save
         </button>
       </form>
-      <div className="container-notes">
+      <div name='containerNotes'className="container-notes" id='containerNotes'> 
         {lista.map((list) => (
           <div key={list.id} className="note">
             <div className="container-btn-note-icons">

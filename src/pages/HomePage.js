@@ -1,7 +1,7 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
 import ".//css-pages/home.css"
-
+import background from "../img/Dandelion.jpg";
 
 
 import { auth } from '../init';
@@ -23,7 +23,8 @@ const login = async (e) => {
 
 export default function HomePage() {
   return (
-    <div className='fondo-home'>
+    <div className='fondo-home' 
+    style={{ backgroundImage: `url(${background})`, width:"100%" }}>
       <h2>RemindMe</h2>
       <button className='btn-google' onClick={login}> Google</button>
       {/* <Link to="/notes">Ir a mis notas</Link> */}

@@ -45,9 +45,9 @@ jest.mock('../init.js', () => {
     })
   })
   
-  describe('Tests para iniciar sesión en Google', () => {
+  describe('Tests for the loginWithGoogle funtion', () => {
     const email = 'jhoannarosameradavila@gmail.com';
-    it('debe retornar que es un correo válido', async () => {
+    it('should return is a valid email', async () => {
         try {
             await loginWithGoogle(email);
         } catch (error) {

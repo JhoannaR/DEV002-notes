@@ -1,3 +1,4 @@
+/*estilos generales*/
 * {
   margin: 0;
   padding: 0;
@@ -17,15 +18,27 @@ code {
     monospace;
 }
 
-.app-name{
-  color: blue;
-}
-
-
 
 .fondo-home{
-  width: 847px; height: 100vh; /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2bbfe4+0,eaecc6+100 */ background: #2bbfe4; /* Old browsers */ background: -moz-linear-gradient(left, #2bbfe4 0%, #eaecc6 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #2bbfe4 0%,#eaecc6 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #2bbfe4 0%,#eaecc6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2bbfe4', endColorstr='#eaecc6',GradientType=1 ); /* IE6-9 */}
+  width: 100%; height: 100vh; 
 
+  /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+background-position: center center;
+
+/* Para que la imagen de fondo no se repita */
+background-repeat: no-repeat;
+
+/* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+background-attachment: fixed;
+
+/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+background-size: cover;
+
+/* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+background-color: #6699;
+
+text-align: center;
+  }
 
 
 .btn-google {
@@ -35,7 +48,11 @@ code {
   border-radius: 7px;
   text-align: center;
   border: 2px blue; 
-  border-style: solid;}
+  border-style: solid;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .btn-google:hover {
   background: rgb(41, 41, 248);
