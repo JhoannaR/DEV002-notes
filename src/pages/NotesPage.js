@@ -140,12 +140,13 @@ export default function NotesPage() {
   return (
     <div className="notes-page">
       <div className="container-header">
-        RemindMe
-        <h2>Notes</h2>
+        {/* RemindMe */}
+        <h2>Logout
         {/* <button className='btn-logout' onClick={logOut(auth)}> Logout</button> */}
         <Link to="/" onClick={logOut(auth)}>
-          <FaSignOutAlt className="logout-icon" size={"2rem"} />
+          <FaSignOutAlt className="flow-icon" size={"2rem"} />
         </Link>
+        </h2>
       </div>
       <form
         className="form-note"
@@ -160,7 +161,7 @@ export default function NotesPage() {
         <input
           type="text"
           name="title"
-          // className="title-style"
+          className="title-input"
           placeholder="Title..."
           value={title}
           onChange={handleTitleChange}
@@ -232,6 +233,7 @@ export default function NotesPage() {
               Save
             </button>
             <button
+            onClick={closeModal}
               type="button"
               className="close-modalUpdate"
               id="botonCancelar"
