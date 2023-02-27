@@ -1,6 +1,6 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import ".//css-pages/home.css"
+import "./css-pages/home.css"
 import background from "../img/Dandelion.jpg";
 
 import { FaArrowAltCircleRight } from "react-icons/fa";

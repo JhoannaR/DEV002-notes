@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 //import { GrLogout } from "react-icons/gr";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
-import ".//css-pages/notes.css";
 import {MdDeleteOutline} from "react-icons/md";
+
+import "./css-pages/notes.css";
 
 import { auth, Timestamp } from "../init";
 import { logOut } from "../lib/firebase/methodsAuth.js";
