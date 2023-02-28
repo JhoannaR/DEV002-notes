@@ -13,8 +13,7 @@
 
 ## 1. Resumen del Proyecto
 
-En este proyecto se construyó una aplicación para tomar notas, que nos permita
-crear, editar, eliminar y consultarlas en cualquier momento.
+En este proyecto se construyó una aplicación para tomar notas desde una tablet, que nos permite crear, editar, eliminar y consultarlas en cualquier momento.
 
 No existe día que no tomemos notas, siempre necesitamos apuntar alguna dirección, número telefónico, notas de alguna reunión o guardar nuestras URLs favoritas para poder consultarlas más tarde. Muchas veces para esta actividad utilizamos libretas o agendas que terminan siendo olvidadas, o anotamos de manera dispersa de tal manera que perdemos de vista la prioridad y el propósito de la nota lo cual da como resultado una nota perdida.
 
@@ -92,9 +91,10 @@ Se realizó el prototipo de alta calidad en Figma: [_PrototipoAC_](https://www.f
 
 Se desplegó la página usando Netlify: [_Despliegue_](https://symphonious-moonbeam-4bab46.netlify.app/)
 
-![p1](https://user-images.githubusercontent.com/113317909/221905402-7e60e1b4-3308-4f19-96a2-12dc1b952bf0.PNG)
-![p2](https://user-images.githubusercontent.com/113317909/221906676-e470ea47-0ce8-45e4-9c54-7c9d3a39fc28.PNG)
-
+![p1](https://user-images.githubusercontent.com/113317909/221909697-e1b82ebd-8581-4b5b-9dd3-cad90d28f977.PNG)
+![p2](https://user-images.githubusercontent.com/113317909/221909756-3cb050ec-b804-4a4e-9b39-09522cdb0977.PNG)
+![editar con un modal](https://user-images.githubusercontent.com/113317909/221909809-a521ae37-2692-41ac-9c21-190ff0dde88d.PNG)
+![eliminar nota](https://user-images.githubusercontent.com/113317909/221909831-fd9aed77-acf5-40b5-9ee2-a48fdd08e856.PNG)
 
 ## 5. Test
 ---en proceso---
