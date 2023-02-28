@@ -1,4 +1,4 @@
-import React from 'react'
+//import React, { useState } from 'react'
 //import { Link } from 'react-router-dom'
 import "./css-pages/home.css"
 import background from "../img/Dandelion.jpg";
@@ -10,9 +10,12 @@ import { loginWithGoogle } from '../lib/firebase/methodsAuth';
 
 const login = async (e) => {
   e.preventDefault();
+ // const [blColor, setBlColor] =useState('blue');
 
   try {
     await loginWithGoogle(auth);
+   // setBlColor(blColor ==='blue'? 'pink':'blue')
+
     
     location.href='/notes'
   }
@@ -23,6 +26,8 @@ const login = async (e) => {
 
 
 export default function HomePage() {
+
+
   return (
     <div className='fondo-home' 
     style={{ backgroundImage: `url(${background})`, width:"100%" }}>

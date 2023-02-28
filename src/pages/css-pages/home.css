@@ -45,7 +45,8 @@ align-items: center;
 
 
 .btn-google {
-  background: linear-gradient(294deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: pink;
+  /*linear-gradient(294deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%)*/
   width: 20%;
   height: 35px;
   border-radius: 7px;
@@ -65,5 +66,5 @@ align-items: center;
 }
 
 .btn-google:hover {
-  background: rgb(41, 41, 248);
+  background: blue;
 }
