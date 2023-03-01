@@ -34,17 +34,17 @@ code {
 }
 h2{
 
-  margin: 2% 4%;
+  margin: 1rem 2rem;
 }
 
 /*---------------------------formulario para crear una nota---------*/
 .form-note {
   display: flex;
   flex-flow: column wrap;
-  width: 100px;
+  width: 80px;
    justify-content: center; 
+   margin-left: 2rem;
   /* align-items: center; */
-  margin-left: 25%;
   
 }
 /* .title-input{
@@ -65,29 +65,29 @@ h2{
 
 /*-----------------------------contenedor de notas-------------------*/
 .container-notes {
-  width: auto;
+  width: 100%;
   height: 1024px;
   background-color: rgb(219, 251, 254);
   border: none;
   /*flex-direction: column;
  margin: 10px 10px 10px 10px; */
-  /* gap: 20px; */
   display: flex;
-
   order: 1;
   flex-direction: row;
+  overflow: scroll; /*para la barra de desplazamiento*/
+
   /*se acomoda en filas */
-  /* flex-wrap: wrap;  */
+   flex-wrap: wrap;  
   /*ajustará el número de elementos en las filas de acuerdo al tamaño del dispositivo*/
   /* justify-content: space-between; */
   /*justifique a los lados y ajusta el tamaño entre tarjetas*/
   /* align-items: center; */
   /*centra las tarjetas*/
-  align-content: center;
+  /* align-content: center; */
   /*centra el contenido de las tarjetas*/
   gap: 3px;
   /*el gap separa los hijos (1 rem=16px)*/
-  margin: 1% 2% 2% 2%;
+  margin: 5px 5px 5px 5px;
 }
 
 
@@ -188,13 +188,19 @@ hr {
 }
 
 @media only screen and (max-width: 640px) {
+  .container-notes {
+    gap: 5px
+  }
   body {
     margin: 2rem;
     padding: 3rem;
   }
 
   .note {
-    width: 70px;
+    width: 120px;
     font-size: small;
+  }
+  .form-note{
+    width: auto;
   }
 }
